@@ -1,0 +1,18 @@
+services:
+  express-app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: express-app
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    expose:
+      - "3000"
+    command: node app.js
+    networks:
+      - npm_network
+
+networks:
+  npm_network:
+    external: true  
