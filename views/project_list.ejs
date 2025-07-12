@@ -1,0 +1,15 @@
+<section class="projects-list">
+  <% projects.forEach(project=> { %>
+    <article class="project-card">
+      <img src="<%= project.image %>" alt="<%= project.title %>" class="project-image" />
+      <h2 class="project-title">
+        <a href="/projects/<%= project.slug %>">
+          <%= project.title %>
+        </a>
+      </h2>
+      <p class="project-description">
+        <%= project.description %>
+      </p>
+    </article>
+    <% }) %>
+</section>
