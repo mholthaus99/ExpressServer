@@ -1,6 +1,6 @@
 # 🧰 Custom 3D-Printed Home Server Rack
 
-![Server Main Image](/images/lcdmain.png)
+![Server Main Image](/images/lcd_render.jpg)
 
 This project showcases a fully custom-designed and 3D-printed home server rack, built to organize and consolidate my networking gear into a clean, compact footprint.
 

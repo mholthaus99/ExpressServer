@@ -1,18 +1,21 @@
-.body-styles {
-  background-color: #ffffff;
-  color: #1d1d1d;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+html,
+body {
+  height: 100%;
 }
 
-.body-styles-docs {
+.body-styles {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+
   display: flex;
   flex-direction: column;
-  margin: 0;
-  width: 100%;
+  min-height: 100%;
 }
 
 .header-styles {
@@ -73,6 +76,23 @@
   justify-content: center;
 }
 
+/* .main-styles {
+  display:block;
+  /* flex-grow: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+ */
+
 .simple-section-card {
   display: flex;
   flex-direction: column;
@@ -128,6 +148,17 @@
   text-align: center;
   font-size: 0.875rem;
   color: #4b5563;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card-link:hover .project-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .projects-list {

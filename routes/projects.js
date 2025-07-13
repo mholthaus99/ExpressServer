@@ -6,13 +6,18 @@ const projects = [
     slug: 'server',
     title: 'Custom Server Rack',
     description: 'A compact 3D-printed home server rack.',
-    image: '/images/server-preview.jpg'
+    image: '/images/server_render.jpg'
   },
   {
     slug: 'lcd',
     title: 'ESP8266 LCD Info Screen',
     description: 'Displays RSS feeds, timers, and messages on an LCD.',
-    image: '/images/lcd-preview.jpg'
+    image: '/images/lcd_render.jpg'
+  },
+  {slug: 'servo',
+    title: 'Servo Control Switch w/ HA connection',
+    description: 'A smart servo control switch with Home Assistant integration.',
+    image: '/images/servoswitch_render.jpg'
   }
 ];
 
@@ -29,16 +34,9 @@ const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
 
-function renderPartial(viewName, data) {
-  const filePath = path.join(__dirname, '..', 'views', `${viewName}.ejs`);
-  const template = fs.readFileSync(filePath, 'utf-8');
-  return ejs.render(template, data);
-}
-
 router.get('/:slug', (req, res) => {
   const slug = req.params.slug;
   const filePath = path.join(__dirname, '..', 'markdown', 'projects', `${slug}.md`);
-
 
   fs.readFile(filePath, 'utf-8', (err, data) => {
     if (err) return res.status(404).send('Project not found');
@@ -46,13 +44,14 @@ router.get('/:slug', (req, res) => {
     const marked = require('marked');
     const htmlContent = marked.parse(data);
 
-    res.render('project', {
+    res.render('layout', {
       title: projects.find(p => p.slug === slug)?.title || 'Project',
-      body: htmlContent
+      body: 'project',            // This is the name of the view inside /views
+      htmlContent: htmlContent,                        // Passed into the included partial
+      extraStyles: ['/css/markdown-style.css']
     });
-  });
+  })
 });
-
 
 module.exports = router;
 

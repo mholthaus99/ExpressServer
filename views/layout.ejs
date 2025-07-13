@@ -7,14 +7,17 @@
     <%= title %>
   </title>
   <link rel="stylesheet" href="/css/style.css">
+  <% if (typeof extraStyles !=='undefined' && extraStyles.length) { %>
+    <% extraStyles.forEach(function(style) { %>
+      <link rel="stylesheet" href="<%= style %>">
+      <% }); %>
+        <% } %>
+
 </head>
 
 <body class="body-styles">
   <header class="header-styles">
-    <div class="header-container">
-      <h1 class="site-title">Max Holthaus</h1>
-      <%- include('partials/nav') %>
-    </div>
+    <%- include('partials/nav') %>
   </header>
 
   <main class="main-styles">

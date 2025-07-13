@@ -1,0 +1,143 @@
+:root {
+  --fg: rgb(0, 0, 0);
+  --bg: rgb(255, 255, 255);
+  --code-background: rgb(255, 255, 255);
+  --h1-color: rgb(0, 0, 0);
+  --h2-color: rgb(0, 0, 0);
+  --h3-color: rgb(0, 0, 0);
+  --link-color: rgb(0, 0, 0);
+  --link-hover: rgb(125, 207, 255);
+}
+
+.docs-body {
+  max-width: 800px;
+}
+
+/* Headings */
+.docs-body h1 {
+  font-size: 2.5rem;
+  color: var(--h1-color);
+  padding-bottom: 0.3em;
+}
+
+.docs-body h2 {
+  font-size: 1.5rem;
+  color: var(--h2-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.5em 0;
+}
+
+.docs-body h3 {
+  font-size: 1.2rem;
+  color: var(--h3-color);
+  margin-bottom: 0em;
+}
+
+.docs-body h4,
+.docs-body h5,
+.docs-body h6 {
+  font-weight: bold;
+  margin-top: 1.2em;
+}
+
+.docs-body h1,
+.docs-body h2,
+.docs-body h3,
+.docs-body h4,
+.docs-body h5,
+.docs-body h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.docs-body h1+p,
+.docs-body h2+p,
+.docs-body h3+p,
+.docs-body h4+p,
+.docs-body h5+p,
+.docs-body h6+p {
+  margin-top: 0.25em;
+}
+
+/* Text */
+.docs-body p,
+.docs-body ul,
+.docs-body ol {
+  padding-left: 0em;
+  margin-bottom: 1em;
+}
+
+/* Lists */
+.docs-body ul,
+.docs-body ol {
+  padding-left: 1.5em;
+}
+
+/* Links */
+.docs-body a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.docs-body a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Code blocks */
+.docs-body pre {
+  background-color: var(--code-background);
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 6px;
+}
+
+.docs-body code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Blockquotes */
+.docs-body blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: #666;
+  background-color: #f9f9f9;
+  margin: 1em 0;
+}
+
+/* Tables */
+.docs-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.docs-body th,
+.docs-body td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.docs-body th {
+  background-color: #eee;
+}
+
+/* Images */
+.docs-body img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Horizontal rule */
+.docs-body hr {
+  border: 0;
+  height: 1px;
+  background: #b9b9b9;
+  margin: 2em 0;
+}
